@@ -34,10 +34,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/playwright-release-notes.git"
+    "url": "https://github.com/qa-gary-parker/playwright-release-notes-examples.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/playwright-release-notes/issues"
+    "url": "https://github.com/qa-gary-parker/playwright-release-notes-examples/issues"
   },
-  "homepage": "https://github.com/yourusername/playwright-release-notes#readme"
+  "homepage": "https://github.com/qa-gary-parker/playwright-release-notes-examples#readme"
 } 
