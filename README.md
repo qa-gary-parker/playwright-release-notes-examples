@@ -43,6 +43,7 @@ Each directory contains:
 | v1.52.0 | Enhanced Aria snapshots with `/children` and `/url` |
 | v1.52.0 | `maxRedirects` option in `apiRequest` |
 | v1.52.0 | `ref` option in `locator.ariaSnapshot()` |
+| v1.52.0 | Test annotations with `testResult.annotations` |
 | v1.51.0 | IndexedDB storage |
 | v1.51.0 | Visibility filtering |
 | v1.51.0 | Contrast emulation |
