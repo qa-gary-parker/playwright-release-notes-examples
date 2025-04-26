@@ -37,18 +37,18 @@ Each directory contains:
 
 ## 📋 Feature Index by Version
 
-| Version | Feature | Example Link |
-|---------|---------|-------------|
-| v1.52.0 | `toContainClass()` assertion | [Example](./v1.52.0-examples/new-features.spec.ts) |
-| v1.52.0 | Enhanced Aria snapshots with `/children` and `/url` | [Example](./v1.52.0-examples/new-features.spec.ts) |
-| v1.52.0 | `maxRedirects` option in `apiRequest` | [Example](./v1.52.0-examples/new-features.spec.ts) |
-| v1.52.0 | `ref` option in `locator.ariaSnapshot()` | [Example](./v1.52.0-examples/new-features.spec.ts) |
-| v1.51.0 | IndexedDB storage | [Example](./v1.51.0-examples/) |
-| v1.51.0 | Visibility filtering | [Example](./v1.51.0-examples/) |
-| v1.51.0 | Contrast emulation | [Example](./v1.51.0-examples/) |
-| v1.50.0 | Test step timeout | [Example](./v1.50.0-examples/) |
-| v1.50.0 | Conditional step skipping | [Example](./v1.50.0-examples/) |
-| v1.50.0 | Accessibility improvements | [Example](./v1.50.0-examples/) |
+| Version | Feature |
+|---------|---------|
+| v1.52.0 | `toContainClass()` assertion |
+| v1.52.0 | Enhanced Aria snapshots with `/children` and `/url` |
+| v1.52.0 | `maxRedirects` option in `apiRequest` |
+| v1.52.0 | `ref` option in `locator.ariaSnapshot()` |
+| v1.51.0 | IndexedDB storage |
+| v1.51.0 | Visibility filtering |
+| v1.51.0 | Contrast emulation |
+| v1.50.0 | Test step timeout |
+| v1.50.0 | Conditional step skipping |
+| v1.50.0 | Accessibility improvements |
 
 ## 🚀 Getting Started
 
