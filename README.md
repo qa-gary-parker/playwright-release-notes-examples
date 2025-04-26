@@ -94,13 +94,6 @@ npm run test:v1.50
 npm run test:all
 ```
 
-## 🔄 Latest Updates
-
-- Added examples for Playwright v1.52.0
-- Implemented GitHub Actions for automated testing
-- Improved documentation and organization
-- Added v1.51.0 examples for IndexedDB storage
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to:
@@ -125,10 +118,3 @@ If you find this project helpful, consider:
 - 💻 Contributing examples or improvements
 
 ---
-
-<div align="center">
-
-**Created and maintained as part of the Playwright community.**  
-*Not officially affiliated with Microsoft or the Playwright team.*
-
-</div> 
