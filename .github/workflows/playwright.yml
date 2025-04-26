@@ -31,7 +31,11 @@ jobs:
         run: npx playwright install --with-deps
         
       - name: Run Playwright tests for ${{ matrix.version }}
-        run: npx playwright test ${{ matrix.version }}
+        run: npx playwright test ${{ matrix.version }} --reporter=html
+      
+      - name: Ensure report directory exists
+        if: always()
+        run: mkdir -p playwright-report
         
       - uses: actions/upload-artifact@v4
         if: always()
@@ -39,6 +43,7 @@ jobs:
           name: playwright-report-${{ matrix.version }}
           path: playwright-report/
           retention-days: 30
+          if-no-files-found: warn
           
   build-status:
     name: 'Test Status'
