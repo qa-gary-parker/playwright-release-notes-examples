@@ -4,10 +4,10 @@
 
 ![Playwright Logo](https://playwright.dev/img/playwright-logo.svg)
 
-[![Playwright Tests](https://github.com/qa-gary-parker/playwright-release-notes/actions/workflows/playwright.yml/badge.svg)](https://github.com/qa-gary-parker/playwright-release-notes/actions/workflows/playwright.yml)
+[![Playwright Tests](https://github.com/qa-gary-parker/playwright-release-notes-examples/actions/workflows/playwright.yml/badge.svg)](https://github.com/qa-gary-parker/playwright-release-notes-examples/actions/workflows/playwright.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://makeapullrequest.com)
-[![GitHub Stars](https://img.shields.io/github/stars/qa-gary-parker/playwright-release-notes.svg)](https://github.com/qa-gary-parker/playwright-release-notes/stargazers)
-[![GitHub Issues](https://img.shields.io/github/issues/qa-gary-parker/playwright-release-notes.svg)](https://github.com/qa-gary-parker/playwright-release-notes/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/qa-gary-parker/playwright-release-notes-examples.svg)](https://github.com/qa-gary-parker/playwright-release-notes-examples/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/qa-gary-parker/playwright-release-notes-examples.svg)](https://github.com/qa-gary-parker/playwright-release-notes-examples/issues)
 
 **A comprehensive demonstration of new features and improvements in [Playwright](https://playwright.dev) releases**
 
@@ -61,8 +61,8 @@ Each directory contains:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/qa-gary-parker/playwright-release-notes.git
-   cd playwright-release-notes
+   git clone https://github.com/qa-gary-parker/playwright-release-notes-examples.git
+   cd playwright-release-notes-examples
    ```
 
 2. Install dependencies:
