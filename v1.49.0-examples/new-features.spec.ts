@@ -89,4 +89,79 @@ test.describe('Playwright v1.49.0 New Features', () => {
     // Verify the canvas exists
     await expect(page.locator('canvas')).toBeVisible();
   });
+
+  // Uncomment this test when you want to demonstrate test.fail.only()
+  // This is commented out because it will always fail when run
+  // test.fail('Demonstrating test.fail.only()', async ({ page }) => {
+  //   // In v1.49.0, you can use test.fail.only() to focus on a failing test
+  //   // Usage would be: test.fail.only('test name', async () => {})
+  //   // This is useful for debugging failing tests in isolation
+  //   
+  //   await page.goto('https://example.com');
+  //   // This assertion is meant to fail for demonstration
+  //   await expect(page.locator('h1')).toHaveText('This will fail');
+  //
+  //   // To run only this test and expect it to fail:
+  //   // Change the first line to test.fail.only()
+  // });
+
+  test('Tracing Group Demonstration', async ({ browser }) => {
+    // Create a new context specifically for this test
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    
+    // Start tracing
+    await context.tracing.start({ screenshots: true, snapshots: true });
+    
+    // First group of actions - navigation
+    await page.goto('https://example.com/');
+    await page.waitForLoadState('domcontentloaded');
+    
+    // Second group of actions - interaction
+    await page.locator('a').first().hover();
+    await page.locator('body').click();
+    
+    // Stop tracing before closing the context
+    await context.tracing.stop({ path: 'trace-with-groups.zip' });
+    
+    // Clean up
+    await context.close();
+    
+    // Note: To view the trace with groups:
+    // npx playwright show-trace trace-with-groups.zip
+    //
+    // Note: In v1.49.0, organizing traces is now possible using multiple
+    // trace files rather than chunks, which is a simpler approach
+  });
+
+  test('Error Cause Demonstration', async ({ page }) => {
+    // In v1.49.0, test errors can have causes
+    // We'll simulate this with a try-catch block
+    
+    try {
+      await page.goto('https://example.com');
+      
+      try {
+        // This will throw an error
+        throw new Error('Original error');
+      } catch (originalError) {
+        // Create a new error with the original as its cause
+        const wrapperError = new Error('Wrapper error');
+        wrapperError.cause = originalError;
+        throw wrapperError;
+        
+        // In v1.49.0 test framework, you can access:
+        // - testInfoError.cause in hooks and fixtures
+        // - testError.cause in reporters
+      }
+    } catch (error) {
+      // For demonstration purposes only - in actual tests 
+      // you'd let Playwright handle the error
+      console.log('Error:', error.message);
+      console.log('Cause:', error.cause?.message);
+      
+      // We won't actually throw here to keep the test passing
+      // but in a real scenario, the error chain would be preserved
+    }
+  });
 });
