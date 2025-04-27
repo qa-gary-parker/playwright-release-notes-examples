@@ -1,4 +1,20 @@
 # Playwright Release Notes Examples
+<!-- Open Graph Meta Tags for better social sharing -->
+<!-- og:title - The title of the page/site -->
+<meta property="og:title" content="Playwright Release Notes Examples">
+<!-- og:description - A brief description of the content -->
+<meta property="og:description" content="A comprehensive collection of working examples for features introduced in each Playwright version, making it easier to learn and implement new testing capabilities.">
+<!-- og:type - The type of content -->
+<meta property="og:type" content="website">
+<!-- og:url - The canonical URL of the page -->
+<meta property="og:url" content="https://github.com/qa-gary-parker/playwright-release-notes-examples">
+<!-- og:image - An image that represents the content -->
+<meta property="og:image" content="https://playwright.dev/img/playwright-logo.svg">
+<!-- Twitter specific tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Playwright Release Notes Examples">
+<meta name="twitter:description" content="Practical code examples of Playwright's latest features, organized by version for easy learning.">
+<meta name="twitter:image" content="https://playwright.dev/img/playwright-logo.svg">
 
 <div align="center">
 
@@ -26,6 +42,7 @@ This repository provides working code examples for features introduced in each P
 
 Each version has its own dedicated examples directory:
 
+- [`v1.49.0-examples/`](./v1.49.0-examples/) - getByAltText locator, TestInfo properties, UI mode improvements
 - [`v1.50.0-examples/`](./v1.50.0-examples/) - Test step timeout, conditional step skipping, accessibility improvements
 - [`v1.51.0-examples/`](./v1.51.0-examples/) - IndexedDB storage, visibility filtering, contrast emulation 
 - [`v1.52.0-examples/`](./v1.52.0-examples/) - Class assertions, enhanced aria snapshots, request options
@@ -50,6 +67,11 @@ Each directory contains:
 | v1.50.0 | Test step timeout |
 | v1.50.0 | Conditional step skipping |
 | v1.50.0 | Accessibility improvements |
+| v1.49.0 | Aria snapshots with YAML |
+| v1.49.0 | `test.fail.only()` method |
+| v1.49.0 | Multiple global setup/teardown |
+| v1.49.0 | Canvas preview in snapshots |
+| v1.49.0 | `tracing.group()` for trace organization |
 
 ## 🚀 Getting Started
 
@@ -90,6 +112,9 @@ npm run test:v1.51
 # Run v1.50.0 examples
 npm run test:v1.50
 
+# Run v1.49.0 examples
+npm run test:v1.49
+
 # Run all examples
 npm run test:all
 ```
@@ -116,5 +141,3 @@ If you find this project helpful, consider:
 - ⭐ Starring the repository on GitHub
 - 🐦 Sharing on social media
 - 💻 Contributing examples or improvements
-
----

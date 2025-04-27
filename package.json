@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
+    "test:v1.49": "playwright test v1.49.0-examples/",
     "test:v1.50": "playwright test v1.50.0-examples/",
     "test:v1.51": "playwright test v1.51.0-examples/",
     "test:v1.52": "playwright test v1.52.0-examples/",
