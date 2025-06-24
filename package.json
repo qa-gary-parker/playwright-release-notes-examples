@@ -9,6 +9,7 @@
     "test:v1.50": "playwright test v1.50.0-examples/",
     "test:v1.51": "playwright test v1.51.0-examples/",
     "test:v1.52": "playwright test v1.52.0-examples/",
+    "test:v1.53": "playwright test v1.53.0-examples/",
     "test:all": "playwright test",
     "lint": "eslint . --ext .ts",
     "update-browsers": "playwright install"

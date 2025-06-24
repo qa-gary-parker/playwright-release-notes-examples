@@ -42,10 +42,11 @@ This repository provides working code examples for features introduced in each P
 
 Each version has its own dedicated examples directory:
 
-- [`v1.49.0-examples/`](./v1.49.0-examples/) - getByAltText locator, TestInfo properties, UI mode improvements
-- [`v1.50.0-examples/`](./v1.50.0-examples/) - Test step timeout, conditional step skipping, accessibility improvements
-- [`v1.51.0-examples/`](./v1.51.0-examples/) - IndexedDB storage, visibility filtering, contrast emulation 
+- [`v1.53.0-examples/`](./v1.53.0-examples/) - Locator description, snapshot path kinds, HTML report titles
 - [`v1.52.0-examples/`](./v1.52.0-examples/) - Class assertions, enhanced aria snapshots, request options
+- [`v1.51.0-examples/`](./v1.51.0-examples/) - IndexedDB storage, visibility filtering, contrast emulation
+- [`v1.50.0-examples/`](./v1.50.0-examples/) - Test step timeout, conditional step skipping, accessibility improvements
+- [`v1.49.0-examples/`](./v1.49.0-examples/) - getByAltText locator, TestInfo properties, UI mode improvements
 
 Each directory contains:
 - `new-features.spec.ts` - Practical test examples demonstrating the features
@@ -56,6 +57,9 @@ Each directory contains:
 
 | Version | Feature |
 |---------|---------|
+| v1.53.0 | `locator.describe()` method |
+| v1.53.0 | `testInfo.snapshotPath()` `kind` option |
+| v1.53.0 | HTML reporter `title` option |
 | v1.52.0 | `toContainClass()` assertion |
 | v1.52.0 | Enhanced Aria snapshots with `/children` and `/url` |
 | v1.52.0 | `maxRedirects` option in `apiRequest` |
@@ -103,6 +107,9 @@ Each directory contains:
 Use our convenient npm scripts to run examples for specific versions:
 
 ```bash
+# Run v1.53.0 examples
+npm run test:v1.53
+
 # Run v1.52.0 examples
 npm run test:v1.52
 
