@@ -11,7 +11,7 @@ This directory contains examples demonstrating the new features introduced in Pl
 
 2.  **`testInfo.snapshotPath()` `kind` Option**
     - A new `kind` option to control which snapshot path template is used.
-    - Allows for more flexible snapshot management.
+    - Allows specifying the type of snapshot: `'snapshot'`, `'screenshot'`, or `'aria'`.
     - Example in `new-features.spec.ts`
 
 3.  **HTML Reporter `title` Option**

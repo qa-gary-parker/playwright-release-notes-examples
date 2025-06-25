@@ -23,48 +23,37 @@ test.describe('Playwright v1.53.0 New Features', () => {
   });
 
   // Feature: testInfo.snapshotPath() with `kind` option
-  // This allows specifying a custom "kind" for a snapshot, which affects the
-  // sub-directory where the snapshot is stored.
-  // https://playwright.dev/docs/release-notes#version-153
-  test('testInfo.snapshotPath() with kind option for custom snapshot paths', async ({ page }, testInfo: TestInfo) => {
+  // This allows specifying which snapshot path template is used, choosing
+  // between 'snapshot', 'screenshot', and 'aria'.
+  // https://playwright.dev/docs/api/class-testinfo#test-info-snapshot-path
+  test('testInfo.snapshotPath() with kind option for snapshot paths', async ({ page }, testInfo: TestInfo) => {
     await page.setContent('<div>Hello, World!</div>');
-    const element = page.locator('div');
 
-    // Define a custom kind for this snapshot.
-    // This can be useful for organizing different types of snapshots (e.g., 'visual', 'accessibility').
-    const customKind = 'my-custom-kind';
+    // The `kind` option is passed in a second argument to specify the type of snapshot.
+    // Valid options are 'snapshot', 'screenshot', or 'aria'.
+    // This is useful for building custom assertions or tools that need to
+    // generate snapshot paths consistent with Playwright's naming conventions.
 
-    // Generate the snapshot path using the new `kind` option.
-    // The snapshot will be stored in a directory named after the `kind`.
-    const snapshotPath = testInfo.snapshotPath({ kind: customKind, name: 'hello-world.txt' });
+    // Example for a 'snapshot' kind (the default)
+    const snapshotPath = testInfo.snapshotPath('hello-world.txt');
+    console.log(`Default snapshot path: ${snapshotPath}`);
+    // By default, the path is inside a directory like `test-file-name.spec.ts-snapshots`
+    expect(snapshotPath).toContain('new-features.spec.ts-snapshots');
 
-    // We can check where the snapshot path is pointing.
-    // It should include a directory with the name of our custom kind.
-    expect(snapshotPath).toContain(customKind);
-    console.log(`Snapshot path: ${snapshotPath}`);
+    // Generate the snapshot path for a 'screenshot'
+    const screenshotPath = testInfo.snapshotPath('my-screenshot.png', { kind: 'screenshot' });
+    console.log(`Screenshot path: ${screenshotPath}`);
+    // The path for 'screenshot' will be inside a directory like `new-features.spec.ts-snapshots`
+    expect(screenshotPath).toContain('new-features.spec.ts-snapshots');
 
-    // Let's create a dummy snapshot file to verify it works.
-    const snapshotDir = path.dirname(snapshotPath);
+    // You can then use these paths for custom file operations.
+    const snapshotDir = path.dirname(screenshotPath);
     if (!fs.existsSync(snapshotDir)) {
       fs.mkdirSync(snapshotDir, { recursive: true });
     }
-    fs.writeFileSync(snapshotPath, 'This is a test snapshot.');
+    fs.writeFileSync(screenshotPath, 'This is a dummy screenshot file.');
 
     // Assert that the snapshot file was created in the correct location.
-    expect(fs.existsSync(snapshotPath)).toBe(true);
-
-    // Now, let's take a real screenshot and see how it works with toHaveScreenshot.
-    // The `kind` option isn't directly exposed in `toHaveScreenshot`, but this demonstrates
-    // the underlying API that powers snapshot management.
-    // A custom assertion could be built on top of `testInfo.snapshotPath()` to use this feature.
-    
-    // For example, a custom visual regression assertion could be:
-    async function expectToHaveVisualSnapshot(locator, name, kind) {
-      const snapshotPath = testInfo.snapshotPath({ name, kind });
-      await expect(locator).toHaveScreenshot(path.basename(snapshotPath));
-    }
-
-    // This is a conceptual example, as toHaveScreenshot doesn't directly support a `kind` parameter yet.
-    // The new API is a building block for more advanced testing scenarios.
+    expect(fs.existsSync(screenshotPath)).toBe(true);
   });
 }); 
