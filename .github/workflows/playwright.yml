@@ -37,7 +37,7 @@ jobs:
         if: always()
         run: mkdir -p playwright-report
         
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: always()
         with:
           name: playwright-report-${{ matrix.version }}
