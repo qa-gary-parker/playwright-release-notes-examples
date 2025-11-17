@@ -64,14 +64,15 @@ export default defineConfig({
   tsconfig: path.join(__dirname, '../tsconfig.json'),
   
   // New in v1.49: Support for multiple global setup and teardown files
-  globalSetup: [
-    './global-setup-1.ts',
-    './global-setup-2.ts',
-  ],
-  globalTeardown: [
-    './global-teardown-1.ts',
-    './global-teardown-2.ts',
-  ],
+  // Commented out to allow tests to run - uncomment and create files to test this feature
+  // globalSetup: [
+  //   './global-setup-1.ts',
+  //   './global-setup-2.ts',
+  // ],
+  // globalTeardown: [
+  //   './global-teardown-1.ts',
+  //   './global-teardown-2.ts',
+  // ],
   
   // Useful for debugging
   timeout: 30000,

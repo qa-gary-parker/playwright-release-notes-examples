@@ -42,11 +42,14 @@ This repository provides working code examples for features introduced in each P
 
 Each version has its own dedicated examples directory:
 
+- [`v1.56.0-examples/`](./v1.56.0-examples/) - New page APIs (consoleMessages, pageErrors, requests), Playwright Test Agents
+- [`v1.55.0-examples/`](./v1.55.0-examples/) - testStepInfo.titlePath property, codegen automatic assertions
+- [`v1.54.0-examples/`](./v1.54.0-examples/) - Cookie partitioning, HTML reporter noSnippets, annotation location
 - [`v1.53.0-examples/`](./v1.53.0-examples/) - Locator description, snapshot path kinds, HTML report titles
 - [`v1.52.0-examples/`](./v1.52.0-examples/) - Class assertions, enhanced aria snapshots, request options
 - [`v1.51.0-examples/`](./v1.51.0-examples/) - IndexedDB storage, visibility filtering, contrast emulation
 - [`v1.50.0-examples/`](./v1.50.0-examples/) - Test step timeout, conditional step skipping, accessibility improvements
-- [`v1.49.0-examples/`](./v1.49.0-examples/) - getByAltText locator, TestInfo properties, UI mode improvements
+- [`v1.49.0-examples/`](./v1.49.0-examples/) - Aria snapshots with YAML, canvas preview, tracing groups, error causes
 
 Each directory contains:
 - `new-features.spec.ts` - Practical test examples demonstrating the features
@@ -57,6 +60,18 @@ Each directory contains:
 
 | Version | Feature |
 |---------|---------|
+| v1.56.0 | `page.consoleMessages()` API |
+| v1.56.0 | `page.pageErrors()` API |
+| v1.56.0 | `page.requests()` API |
+| v1.56.0 | Playwright Test Agents (planner, generator, healer) |
+| v1.56.0 | UI Mode enhancements (copy prompt disable, merge files, update snapshots) |
+| v1.55.0 | `testStepInfo.titlePath` property |
+| v1.55.0 | Codegen automatic `toBeVisible()` assertions |
+| v1.55.0 | Debian 13 "Trixie" support |
+| v1.54.0 | Cookie partitioning with `partitionKey` (CHIPS) |
+| v1.54.0 | HTML reporter `noSnippets` option |
+| v1.54.0 | Annotation `location` property |
+| v1.54.0 | `--user-data-dir` command line option |
 | v1.53.0 | `locator.describe()` method |
 | v1.53.0 | `testInfo.snapshotPath()` `kind` option |
 | v1.53.0 | HTML reporter `title` option |
@@ -107,6 +122,15 @@ Each directory contains:
 Use our convenient npm scripts to run examples for specific versions:
 
 ```bash
+# Run v1.56.0 examples
+npm run test:v1.56
+
+# Run v1.55.0 examples
+npm run test:v1.55
+
+# Run v1.54.0 examples
+npm run test:v1.54
+
 # Run v1.53.0 examples
 npm run test:v1.53
 
