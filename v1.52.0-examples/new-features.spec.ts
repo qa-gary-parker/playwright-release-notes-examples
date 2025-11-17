@@ -48,6 +48,8 @@ test.describe('Playwright v1.52.0 New Features', () => {
   });
 
   test('New maxRedirects option in apiRequest', async ({ request }) => {
+    test.skip(!!process.env.CI, 'Skipping in CI due to httpbin.org reliability issues');
+
     // Testing maxRedirects option with a redirect chain
     // This should succeed - allows up to 5 redirects
     const response = await request.get('http://httpbin.org/redirect/2', {
