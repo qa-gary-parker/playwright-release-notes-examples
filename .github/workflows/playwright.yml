@@ -15,14 +15,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: ['v1.49.0-examples', 'v1.50.0-examples', 'v1.51.0-examples', 'v1.52.0-examples']
+        version: ['v1.49.0-examples', 'v1.50.0-examples', 'v1.51.0-examples', 'v1.52.0-examples', 'v1.53.0-examples', 'v1.54.0-examples', 'v1.55.0-examples', 'v1.56.0-examples']
         
     steps:
       - uses: actions/checkout@v4
       
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           
       - name: Install dependencies
         run: npm ci
@@ -31,7 +31,9 @@ jobs:
         run: npx playwright install --with-deps
         
       - name: Run Playwright tests for ${{ matrix.version }}
-        run: npx playwright test ${{ matrix.version }} --reporter=html
+        run: npx playwright test ${{ matrix.version }} --reporter=html --retries=2
+        env:
+          CI: true
       
       - name: Ensure report directory exists
         if: always()
