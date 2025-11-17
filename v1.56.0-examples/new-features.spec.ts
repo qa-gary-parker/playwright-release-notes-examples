@@ -19,7 +19,7 @@ test.describe('Playwright v1.56.0 New Features', () => {
     });
 
     // New API: Retrieve all console messages
-    const consoleMessages = page.consoleMessages();
+    const consoleMessages = await page.consoleMessages();
 
     // Filter to find our messages
     const logs = consoleMessages.filter(msg => msg.text().startsWith('Test'));
@@ -58,7 +58,7 @@ test.describe('Playwright v1.56.0 New Features', () => {
     await page.waitForTimeout(200);
 
     // New API: Retrieve all page errors
-    const pageErrors = page.pageErrors();
+    const pageErrors = await page.pageErrors();
 
     // Find our intentional error
     const testError = pageErrors.find(err => err.message.includes('Intentional test error'));
@@ -84,7 +84,7 @@ test.describe('Playwright v1.56.0 New Features', () => {
     });
 
     // New API: Retrieve all requests
-    const requests = page.requests();
+    const requests = await page.requests();
 
     expect(requests.length).toBeGreaterThan(0);
 
@@ -130,9 +130,9 @@ test.describe('Playwright v1.56.0 New Features', () => {
     });
 
     // Collect all data at once
-    const allConsoleMessages = page.consoleMessages();
-    const allPageErrors = page.pageErrors();
-    const allRequests = page.requests();
+    const allConsoleMessages = await page.consoleMessages();
+    const allPageErrors = await page.pageErrors();
+    const allRequests = await page.requests();
 
     // Create a comprehensive test report
     const report = {
@@ -172,7 +172,7 @@ test.describe('Playwright v1.56.0 New Features', () => {
       console.debug('Debug message 1');
     });
 
-    const allMessages = page.consoleMessages();
+    const allMessages = await page.consoleMessages();
 
     // Filter by message type
     const logs = allMessages.filter(m => m.type() === 'log');
@@ -198,7 +198,7 @@ test.describe('Playwright v1.56.0 New Features', () => {
     // Wait for requests to complete
     await page.waitForLoadState('networkidle');
 
-    const requests = page.requests();
+    const requests = await page.requests();
 
     // Analyze request patterns
     const getRequests = requests.filter(r => r.method() === 'GET');
