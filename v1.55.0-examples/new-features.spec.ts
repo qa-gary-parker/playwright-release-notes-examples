@@ -41,7 +41,7 @@ test.describe('Playwright v1.55.0 New Features', () => {
   // assertions for elements that are checked for visibility.
   // This is a codegen/UI feature, so we demonstrate what it produces.
   test('example of codegen-generated toBeVisible assertions', async ({ page }) => {
-    await page.goto('https://example.com');
+    await page.setContent('<h1>Example Domain</h1>');
 
     // When you use codegen (npx playwright codegen), it will now
     // automatically generate assertions like this:
