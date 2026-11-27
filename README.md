@@ -42,6 +42,7 @@ This repository provides working code examples for features introduced in each P
 
 Each version has its own dedicated examples directory:
 
+- [`v1.65.0-examples/`](./v1.65.0-examples/) - Measured experiments: empty shards, `onlyFailures`, WebMCP (links to their repositories, write-ups and videos)
 - [`v1.56.0-examples/`](./v1.56.0-examples/) - New page APIs (consoleMessages, pageErrors, requests), Playwright Test Agents
 - [`v1.55.0-examples/`](./v1.55.0-examples/) - testStepInfo.titlePath property, codegen automatic assertions
 - [`v1.54.0-examples/`](./v1.54.0-examples/) - Cookie partitioning, HTML reporter noSnippets, annotation location
@@ -51,7 +52,7 @@ Each version has its own dedicated examples directory:
 - [`v1.50.0-examples/`](./v1.50.0-examples/) - Test step timeout, conditional step skipping, accessibility improvements
 - [`v1.49.0-examples/`](./v1.49.0-examples/) - Aria snapshots with YAML, canvas preview, tracing groups, error causes
 
-Each directory contains:
+Each directory up to v1.56.0 contains:
 - `new-features.spec.ts` - Practical test examples demonstrating the features
 - `README.md` - Detailed explanation of the features with reference links
 - `playwright.config.ts` - Configuration using version-specific options
@@ -160,6 +161,8 @@ Contributions are welcome! Please see our [Contributing Guidelines](CONTRIBUTING
 
 ## 🌟 Related Resources
 
+- [Measured experiments](https://garyparker.dev/measured) - write-ups, repositories and videos for single Playwright behaviours
+- [Playwright tools by the same author](https://garyparker.dev/projects)
 - [Playwright Documentation](https://playwright.dev/docs/intro)
 - [Playwright API Reference](https://playwright.dev/docs/api/class-playwright)
 - [Release Notes](https://playwright.dev/docs/release-notes)
